@@ -158,6 +158,8 @@ local C = {
     [170] = 9, [173] = 0.88, [175] = 5, [186] = 0, [192] = 30, [195] = 0.7,
 }
 K.C = C
+-- [FIX] monkey logo
+K.LithiumLogo = "rbxassetid://4607234156"
 
 --==========================================================================
 --  Kicia's own UI, settings store and Combat menu (lifted from the dump)
@@ -12361,7 +12363,7 @@ return ad.c
 end
 end
 do -- ae
-local function fn35()local I,W= tbl17 .f(), tbl17 .ad(); tbl17 .a(); tbl17 .r();local l={};l.__index=l;local N={AutoSave=false,AutoSaveConfigName=nil,AutoLoad=false,AutoLoadConfigName=nil,Keybind="RightShift",Size=nil,Position=nil,KeybindsListPosition=nil,WatermarkPosition=nil,MobileButtonPositions=nil,ShowKeybinds=nil,ShowWatermark=nil,MenuKeybindInList=nil,HideMobileMenuButton=nil,SilentLoad=nil};local function P(a)return(a:gsub("%.json$",""));end;local function a(e)if type(e)~="table"then return nil;end;local c,E=e[1],e[2];if type(c)~="number"or type(E)~="number"then return nil;end;if c~=c or E~=E then return nil;end;return{c,E};end;local function e(c)if type(c)~="table"then return nil;end;local E,p={},false;for T,t in c,nil,nil do if type(T)~="string"or T==""then continue;end;local c_26=a(t);if c_26==nil then continue;end;E[T]=c_26;p=true;end;return p and E or nil;end;local function c(E)local p=table.clone(N);if type(E)~="table"then return p;end;if type(E.AutoSave)=="boolean"then p.AutoSave=E.AutoSave;end;if type(E.AutoSaveConfigName)=="string"then p.AutoSaveConfigName=P(E.AutoSaveConfigName);end;if type(E.AutoLoad)=="boolean"then p.AutoLoad=E.AutoLoad;end;if type(E.AutoLoadConfigName)=="string"then p.AutoLoadConfigName=P(E.AutoLoadConfigName);end;if type(E.Keybind)=="string"then p.Keybind=E.Keybind;end;if type(E.ShowKeybinds)=="boolean"then p.ShowKeybinds=E.ShowKeybinds;end;if type(E.ShowWatermark)=="boolean"then p.ShowWatermark=E.ShowWatermark;end;if type(E.MenuKeybindInList)=="boolean"then p.MenuKeybindInList=E.MenuKeybindInList;end;if type(E.HideMobileMenuButton)=="boolean"then p.HideMobileMenuButton=E.HideMobileMenuButton;end;if type(E.SilentLoad)=="boolean"then p.SilentLoad=E.SilentLoad;end;p.Size=a(E.Size);p.Position=a(E.Position);p.KeybindsListPosition=a(E.KeybindsListPosition);p.WatermarkPosition=a(E.WatermarkPosition);p.MobileButtonPositions=e(E.MobileButtonPositions);return p;end;local function P_27(a)if type(a)~="table"then return{};end;local e=table.clone(a);a=e.autosave;e.autosave=nil;if type(a)=="string"then e.AutoSave=true;e.AutoSaveConfigName=a;end;a=e.autoload;e.autoload=nil;if type(a)=="string"then e.AutoLoad=true;e.AutoLoadConfigName=a;end;return e;end;local function a_28(e)if type(e)~="table"then return{};end;local E,p=table.clone(e),{"autoSave","autoSaveConfigName","autoLoad","autoLoadConfigName","keybind","size","position","keybindsListPosition","watermarkPosition","mobileButtonPositions","showKeybinds","showWatermark","menuKeybindInList","hideMobileMenuButton","silentLoad"};for T,T_29 in p,nil,nil do e=string.upper(string.sub(T_29,1,1))..string.sub(T_29,2);if E[e]==nil then E[e]=E[T_29];end;E[T_29]=nil;end;return E;end;l.new=function(e)return setmetatable({_errorReporter=W.new(),_manager=I.new({DefaultConfig=N,CurrentVersion=3,SavePath=e,Deserialize=c,Migrations={[1]=P_27,[2]=a_28}})},l);end;l.Load=function(I)if not I._manager:Exists("general")then return I._manager:Reset();end;local W=I._manager:LoadFromFile("general");if W.Ok then return W.Value;end;I._errorReporter:Report(W.Error);return I._manager:Reset();end;l.Save=function(I,W)I._manager:SetData(W);return I._errorReporter:ReportResult(I._manager:SaveToFile("general"));end;l.Destroy=function(I)I._errorReporter:Destroy();end;return l;end
+local function fn35()local I,W= tbl17 .f(), tbl17 .ad(); tbl17 .a(); tbl17 .r();local l={};l.__index=l;local N={AutoSave=false,AutoSaveConfigName=nil,AutoLoad=false,AutoLoadConfigName=nil,Keybind="RightShift",Size=nil,Position=nil,KeybindsListPosition=nil,WatermarkPosition=nil,MobileButtonPositions=nil,ShowKeybinds=nil,ShowWatermark=nil,MenuKeybindInList=nil,HideMobileMenuButton=nil,SilentLoad=true};local function P(a)return(a:gsub("%.json$",""));end;local function a(e)if type(e)~="table"then return nil;end;local c,E=e[1],e[2];if type(c)~="number"or type(E)~="number"then return nil;end;if c~=c or E~=E then return nil;end;return{c,E};end;local function e(c)if type(c)~="table"then return nil;end;local E,p={},false;for T,t in c,nil,nil do if type(T)~="string"or T==""then continue;end;local c_26=a(t);if c_26==nil then continue;end;E[T]=c_26;p=true;end;return p and E or nil;end;local function c(E)local p=table.clone(N);if type(E)~="table"then return p;end;if type(E.AutoSave)=="boolean"then p.AutoSave=E.AutoSave;end;if type(E.AutoSaveConfigName)=="string"then p.AutoSaveConfigName=P(E.AutoSaveConfigName);end;if type(E.AutoLoad)=="boolean"then p.AutoLoad=E.AutoLoad;end;if type(E.AutoLoadConfigName)=="string"then p.AutoLoadConfigName=P(E.AutoLoadConfigName);end;if type(E.Keybind)=="string"then p.Keybind=E.Keybind;end;if type(E.ShowKeybinds)=="boolean"then p.ShowKeybinds=E.ShowKeybinds;end;if type(E.ShowWatermark)=="boolean"then p.ShowWatermark=E.ShowWatermark;end;if type(E.MenuKeybindInList)=="boolean"then p.MenuKeybindInList=E.MenuKeybindInList;end;if type(E.HideMobileMenuButton)=="boolean"then p.HideMobileMenuButton=E.HideMobileMenuButton;end;if type(E.SilentLoad)=="boolean"then p.SilentLoad=E.SilentLoad;end;p.Size=a(E.Size);p.Position=a(E.Position);p.KeybindsListPosition=a(E.KeybindsListPosition);p.WatermarkPosition=a(E.WatermarkPosition);p.MobileButtonPositions=e(E.MobileButtonPositions);return p;end;local function P_27(a)if type(a)~="table"then return{};end;local e=table.clone(a);a=e.autosave;e.autosave=nil;if type(a)=="string"then e.AutoSave=true;e.AutoSaveConfigName=a;end;a=e.autoload;e.autoload=nil;if type(a)=="string"then e.AutoLoad=true;e.AutoLoadConfigName=a;end;return e;end;local function a_28(e)if type(e)~="table"then return{};end;local E,p=table.clone(e),{"autoSave","autoSaveConfigName","autoLoad","autoLoadConfigName","keybind","size","position","keybindsListPosition","watermarkPosition","mobileButtonPositions","showKeybinds","showWatermark","menuKeybindInList","hideMobileMenuButton","silentLoad"};for T,T_29 in p,nil,nil do e=string.upper(string.sub(T_29,1,1))..string.sub(T_29,2);if E[e]==nil then E[e]=E[T_29];end;E[T_29]=nil;end;return E;end;l.new=function(e)return setmetatable({_errorReporter=W.new(),_manager=I.new({DefaultConfig=N,CurrentVersion=3,SavePath=e,Deserialize=c,Migrations={[1]=P_27,[2]=a_28}})},l);end;l.Load=function(I)if not I._manager:Exists("general")then return I._manager:Reset();end;local W=I._manager:LoadFromFile("general");if W.Ok then return W.Value;end;I._errorReporter:Report(W.Error);return I._manager:Reset();end;l.Save=function(I,W)I._manager:SetData(W);return I._errorReporter:ReportResult(I._manager:SaveToFile("general"));end;l.Destroy=function(I)I._errorReporter:Destroy();end;return l;end
 
 tbl17.ae = function()
 local ae = tbl17.cache.ae
@@ -19856,7 +19858,7 @@ return bi.c
 end
 end
 do -- bj
-local function fn35() tbl17 .a5();return{ColorAnimations={Entries= tbl17 .i().atomic({})},Notifications={Enabled=true,Side="TopLeft",Size=15,Font="Inconsolata",Offset=0},Theme={Accent=Color3.fromRGB(197,59,59),Outline=Color3.fromRGB(24,25,24),Background=Color3.fromRGB(0,0,0),ElementBackground=Color3.fromRGB(6,6,6),TabButtonSelected=Color3.fromRGB(51,65,70),Unselected=Color3.fromRGB(75,72,72),TextColor=Color3.fromRGB(197,197,197),ToggleCircleUnselected=Color3.fromRGB(70,85,87),ToggleBackgroundUnselected=Color3.fromRGB(12,13,13)},AutoExecuteScript={Enabled=false}};end
+local function fn35() tbl17 .a5();return{ColorAnimations={Entries= tbl17 .i().atomic({})},Notifications={Enabled=true,Side="TopLeft",Size=15,Font="Inconsolata",Offset=0},Theme={Accent=Color3.fromRGB(197,59,59),Outline=Color3.fromRGB(24,25,24),Background=Color3.fromRGB(0,0,0),ElementBackground=Color3.fromRGB(6,6,6),TabButtonSelected=Color3.fromRGB(51,65,70),Unselected=Color3.fromRGB(75,72,72),TextColor=Color3.fromRGB(197,197,197),ToggleCircleUnselected=Color3.fromRGB(70,85,87),ToggleBackgroundUnselected=Color3.fromRGB(12,13,13)},AutoExecuteScript={Enabled=true}};end
 
 tbl17.bj = function()
 local bj = tbl17.cache.bj
@@ -60417,7 +60419,7 @@ return je.c
 end
 end
 do -- jf
-local function fn35()local I,W= tbl17 .bG(), tbl17 .aE(); tbl17 .hN();local N,P,a,e,c,E,p,T= tbl17 .h_(), tbl17 .ij(), tbl17 .ip(), tbl17 .n(), tbl17 .iw(), tbl17 .i_(), tbl17 .je(),cloneref(game:GetService("Players")).LocalPlayer;return function(l)if getgenv().KhForceMobileUi==true then W.ForceMobileLayout();end;local t=W.Menu.new({Icon=K.LithiumLogo,Title=string.format("KiciaHooker fixed by skidcoded | %s",tostring("Skidded Build")),Directory="kiciarebuild/rivals",Config=l.ReactiveStoreAdapter,ColorAnimation=l.ColorAnimation,Persistence=I,State=l.GeneralState,StateData=l.GeneralStateData,OnUnload=function()e:Destroy();end});e:Add(t);local I=l.PlayerIdentities;t:SetWatermarkUsername(I:GetPresented(T));e:Connect(I.IdentityChanged,function(W)if W==T then t:SetWatermarkUsername(I:GetPresented(T));end;end);P(l,t);E(l,t);c(l,t);N(l,t);p(l,t);a(l,t);t:AddSettingsTab();t:SetVisible(not(l.GeneralStateData.SilentLoad==true),true);end;end
+local function fn35()local I,W= tbl17 .bG(), tbl17 .aE(); tbl17 .hN();local N,P,a,e,c,E,p,T= tbl17 .h_(), tbl17 .ij(), tbl17 .ip(), tbl17 .n(), tbl17 .iw(), tbl17 .i_(), tbl17 .je(),cloneref(game:GetService("Players")).LocalPlayer;return function(l)if getgenv().KhForceMobileUi==true then W.ForceMobileLayout();end;local t=W.Menu.new({Icon=K.LithiumLogo,Title=string.format("skid monkey | %s",tostring("Skidded Build")),Directory="kiciarebuild/rivals",Config=l.ReactiveStoreAdapter,ColorAnimation=l.ColorAnimation,Persistence=I,State=l.GeneralState,StateData=l.GeneralStateData,OnUnload=function()e:Destroy();end});e:Add(t);local I=l.PlayerIdentities;t:SetWatermarkUsername(I:GetPresented(T));e:Connect(I.IdentityChanged,function(W)if W==T then t:SetWatermarkUsername(I:GetPresented(T));end;end);P(l,t);E(l,t);c(l,t);N(l,t);p(l,t);a(l,t);t:AddSettingsTab();t:SetVisible(not(l.GeneralStateData.SilentLoad==true),true);end;end
 
 tbl17.jf = function()
 local jf = tbl17.cache.jf
@@ -66440,7 +66442,7 @@ do
         local path = "kiciarebuild/lithium_logo.png"
         local _ok = pcall(wrf, path, decode(LITHIUM_LOGO_B64))
         local _ok2, _id = pcall(gca, path)
-        --  Kicia's original logo is used; the Lithium one is no longer applied.
+        K.LithiumLogo = _ok2 and _id or K.LithiumLogo  -- [FIX] assign custom asset id as logo
     end
 end
 
@@ -66592,6 +66594,19 @@ end
 print("[Kicia] client alive, booting ...")
 print("[Kicia] controllers ready, booting ...")
 print("[FIX] auto-exec/color picker by skidcoded")
+-- [FIX] force SilentLoad and AutoLoad so they work on first inject without
+--       the user having to manually enable them in settings first.
+local _fixedBoot = bootFn
+bootFn = function()
+    local result = _fixedBoot()
+    -- [FIX] force both flags regardless of saved general.json
+    if result and result.GeneralStateData then
+        result.GeneralStateData.SilentLoad = true
+        result.GeneralStateData.AutoLoad = true
+        -- AutoLoadConfigName is left untouched: whatever the user picked in the UI is used
+    end
+    return result
+end
 tbl17.j1()(bootFn())
 task.spawn(function()
 task.wait(60)
